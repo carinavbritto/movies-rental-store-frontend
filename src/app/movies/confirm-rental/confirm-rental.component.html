@@ -1,0 +1,25 @@
+<app-modal
+  [isVisible]="isVisible"
+  title="Confirme sua Locação"
+  (onClose)="closeModal()"
+>
+  <form [formGroup]="rentalForm" (ngSubmit)="submitForm()">
+    <label>
+      Nome:
+      <input formControlName="name" type="text" />
+    </label>
+    <label>
+      Email:
+      <input formControlName="email" type="email" />
+    </label>
+    <label>
+      Telefone:
+      <input formControlName="phone" type="text" />
+    </label>
+    <p>
+      Lembre-se de que o filme deve ser devolvido em até 3 dias corridos, para
+      evitar multas.
+    </p>
+    <button type="submit">Confirmar</button>
+  </form>
+</app-modal>

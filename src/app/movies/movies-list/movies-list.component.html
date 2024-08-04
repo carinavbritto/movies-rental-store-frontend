@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Lista de Filmes</h1>
+  <div class="movie-list">
+    @for (movie of movies; track movie._id) {
+      <app-movie-card
+        [movie]="movie"
+        [onReserve]="reserveMovie.bind(this)"
+      ></app-movie-card>
+    } @empty {
+      <p>Sem filmes disponíveis.</p>
+    }
+  </div>
+
+  <!-- Modal de Reserva -->
+  <app-modal
+    [isVisible]="showReservationModal"
+    title="Filme Reservado com Sucesso!"
+    (onClose)="closeReservationModal()"
+  >
+    <p>ID da Reserva: {{ reservationId }}</p>
+    <p>
+      Sua reserva expira em 3 horas. Para garantir que você possa aproveitar seu
+      filme, confirme a locação o quanto antes.
+    </p>
+    <button (click)="closeReservationModal()">Confirmar Locação</button>
+  </app-modal>
+
+  <!-- Modal de Confirmação de Locação -->
+  <app-confirm-rental
+    [isVisible]="showConfirmRentalModal"
+    [movieId]="selectedMovieId!"
+    (onConfirm)="confirmRental($event)"
+    (onClose)="closeConfirmRentalModal()"
+  ></app-confirm-rental>
+
+  <!-- Modal de Sucesso -->
+  <app-modal
+    [isVisible]="showSuccessModal"
+    title="Locação Confirmada"
+    (onClose)="closeSuccessModal()"
+  >
+    <p>
+      Aproveite seu filme e boa sessão! Ele deve ser devolvido no dia:
+      {{ leaseExpiresAt | date: "dd/MM 'até' HH:mm" }}
+    </p>
+  </app-modal>
+</div>
