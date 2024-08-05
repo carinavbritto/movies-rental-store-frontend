@@ -6,7 +6,9 @@
   width: 100%;
   max-width: 31.25rem;
   min-height: 21.875rem;
-  background-color: $terciary-color;
+  background-color: $secondary-color;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -19,13 +21,6 @@
   }
 
   button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 0.625rem;
-    border-radius: 0.3125rem;
-    cursor: pointer;
-
     &:disabled {
       background-color: #ccc;
       cursor: not-allowed;

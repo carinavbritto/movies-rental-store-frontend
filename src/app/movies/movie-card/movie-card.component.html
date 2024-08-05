@@ -5,7 +5,8 @@
   </div>
   <p>{{ movie.synopsis }}</p>
   @if (movie.status === "available") {
-    <button (click)="onReserve(movie._id)" class="btn-secondary">
+    <button (click)="onReserve(movie._id)" class="btn-primary">
+      <ng-icon name="heroBanknotes"></ng-icon>
       Reservar
     </button>
   } @else if (movie.status === "leased") {

@@ -41,7 +41,10 @@
       />
       <span id="rating-help" class="sr-only">Campo obrigatório</span>
     </div>
-    <button type="submit" class="btn-primary">Adicionar ao catálogo</button>
+    <button type="submit" class="btn-primary">
+      <ng-icon name="heroFilm"></ng-icon>
+      Adicionar ao catálogo
+    </button>
   </form>
 
   <div class="movies-container">
@@ -52,8 +55,11 @@
         <p>{{ movie.synopsis }}</p>
         <p>{{ movie.rating }}</p>
         <div class="buttons-area">
-          <button (click)="editMovie(movie)" class="btn-primary">Editar</button>
+          <button (click)="editMovie(movie)" class="btn-primary">
+            <ng-icon name="heroPencil"></ng-icon> Editar
+          </button>
           <button (click)="deleteMovie(movie._id)" class="btn-secondary">
+            <ng-icon name="heroTrash"></ng-icon>
             Excluir
           </button>
         </div>

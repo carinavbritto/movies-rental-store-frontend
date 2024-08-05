@@ -2,12 +2,18 @@
   <ul>
     @if (authService.isLoggedIn()) {
       <li>
-        <a href="#" (click)="logout()">Sair</a>
+        <a href="#" (click)="logout()">
+          <ng-icon name="heroArrowRightOnRectangle"></ng-icon>
+          Sair
+        </a>
       </li>
     } @else {
       <li>
         <a routerLink="/cms">
-          <button class="btn-primary">Área Restrita</button>
+          <button class="btn-primary">
+            <ng-icon name="heroUsers"></ng-icon>
+            Área Restrita
+          </button>
         </a>
       </li>
     }

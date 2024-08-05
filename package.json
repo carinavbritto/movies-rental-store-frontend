@@ -18,6 +18,8 @@
     "@angular/platform-browser": "^18.1.3",
     "@angular/platform-browser-dynamic": "^18.1.3",
     "@angular/router": "^18.1.3",
+    "@ng-icons/core": "^29.2.2",
+    "@ng-icons/heroicons": "^29.2.2",
     "ngx-mask": "18.0.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.3",

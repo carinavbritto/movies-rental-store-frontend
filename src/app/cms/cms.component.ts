@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Movie, MoviesService } from '../movies/service/movies.service';
+import { heroPencil, heroTrash, heroFilm } from '@ng-icons/heroicons/outline';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'app-cms',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIconComponent],
+  viewProviders: [provideIcons({ heroPencil, heroTrash, heroFilm })],
   templateUrl: './cms.component.html',
   styleUrl: './cms.component.scss'
 })
