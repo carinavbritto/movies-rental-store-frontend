@@ -151,7 +151,7 @@ input {
   padding: 0 0.625rem;
   width: 100%;
   color: $text-color;
-  background-color: $background-color;
+  background-color: transparent;
 
   &:focus {
     outline: none;
