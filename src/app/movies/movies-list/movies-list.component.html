@@ -1,14 +1,16 @@
 <div class="movies-container">
-  <h2>Catálogo de Filmes</h2>
-  <div class="movies-list">
-    @for (movie of movies; track movie._id) {
-      <app-movie-card
-        [movie]="movie"
-        [onReserve]="reserveMovie.bind(this)"
-      ></app-movie-card>
-    } @empty {
-      <p>Sem filmes disponíveis.</p>
-    }
+  <div class="movies-area">
+    <h2>Catálogo de Filmes</h2>
+    <div class="movies-list">
+      @for (movie of movies; track movie._id) {
+        <app-movie-card
+          [movie]="movie"
+          [onReserve]="reserveMovie.bind(this)"
+        ></app-movie-card>
+      } @empty {
+        <p>Sem filmes disponíveis.</p>
+      }
+    </div>
   </div>
 
   <!-- Modal de Reserva -->
