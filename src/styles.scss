@@ -5,6 +5,7 @@
 $primary-color: #c1272d;
 $primary-color-hover: #9b1318;
 $secondary-color: rgba(255, 255, 255, 0.1);
+$terciary-color: rgba(0, 0, 0, 0.7);
 $background-color: #021435;
 $text-color: #fff;
 $placeholder-color: #d6d9dd;
@@ -136,6 +137,12 @@ html {
   color: $text-color;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 input {
   width: 100%;
   max-width: 60vw;
@@ -211,4 +218,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.container {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 450px;
 }
