@@ -1,0 +1,8 @@
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 5.125rem 5.625rem;
+  gap: 1.25rem;
+}

@@ -1,22 +1,40 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-  <label for="username">Nome de Usuário</label>
-  <input id="username" formControlName="username" type="text" />
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form">
+  <h2>Cadastro</h2>
 
-  <label for="password">Senha</label>
-  <input id="password" formControlName="password" type="password" />
+  <div class="inputs-area">
+    <label for="username">Usuário</label>
+    <input
+      id="username"
+      formControlName="username"
+      type="text"
+      placeholder="Digite seu usuário"
+    />
+  </div>
 
-  <label for="confirmPassword">Confirme sua Senha</label>
-  <input
-    id="confirmPassword"
-    formControlName="confirmPassword"
-    type="password"
-  />
+  <div class="inputs-area">
+    <label for="password">Senha</label>
+    <input
+      id="password"
+      formControlName="password"
+      type="password"
+      placeholder="Digite sua senha"
+    />
+  </div>
 
+  <div class="inputs-area">
+    <label for="confirmPassword">Confirme sua Senha</label>
+    <input
+      id="confirmPassword"
+      formControlName="confirmPassword"
+      type="password"
+      placeholder="Repita sua senha"
+    />
+  </div>
   @if (registerForm.hasError("passwordMismatch", "confirmPassword")) {
     <div>
       <p>As senhas não coincidem.</p>
     </div>
   }
 
-  <button type="submit">Cadastrar</button>
+  <button type="submit" class="btn-primary">Cadastrar</button>
 </form>

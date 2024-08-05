@@ -1,4 +1,4 @@
-<div class="container">
+<div class="movies-container">
   <h1>Lista de Filmes</h1>
   <div class="movie-list">
     @for (movie of movies; track movie._id) {
@@ -22,7 +22,9 @@
       Sua reserva expira em 3 horas. Confirme a locação o quanto antes para
       assistir seu filme.
     </p>
-    <button (click)="closeReservationModal()">Confirmar Locação</button>
+    <button (click)="closeReservationModal()" class="btn-primary">
+      Confirmar Locação
+    </button>
   </app-modal>
 
   <!-- Modal de Confirmação de Locação -->

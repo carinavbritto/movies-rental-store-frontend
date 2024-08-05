@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    @if (authService.isLoggedIn()) {
+      <li>
+        <a href="#" (click)="logout()">Sair</a>
+      </li>
+    } @else {
+      <li>
+        <a routerLink="/cms">Área Restrita</a>
+      </li>
+    }
+  </ul>
+</nav>
