@@ -8,12 +8,7 @@
 
     <div class="inputs-area">
       <label for="synopsis">Sinopse</label>
-      <textarea
-        id="synopsis"
-        formControlName="synopsis"
-        rows="5"
-        cols="100"
-      ></textarea>
+      <textarea id="synopsis" formControlName="synopsis"></textarea>
     </div>
 
     <div class="inputs-area">
@@ -30,7 +25,9 @@
       <p>{{ movie.synopsis }}</p>
       <p>{{ movie.rating }}</p>
       <button (click)="editMovie(movie)" class="btn-primary">Editar</button>
-      <button (click)="deleteMovie(movie._id)" class="btn-secondary">Excluir</button>
+      <button (click)="deleteMovie(movie._id)" class="btn-secondary">
+        Excluir
+      </button>
     </div>
   } @empty {
     <p>Sem filmes disponíveis.</p>
