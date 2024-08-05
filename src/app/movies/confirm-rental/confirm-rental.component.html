@@ -15,6 +15,7 @@
         type="text"
         aria-required="true"
         aria-describedby="name-help"
+        class="ipt-secondary"
       />
       <span id="name-help" class="sr-only">Campo obrigatório</span>
       @if (rentalForm.get("name")?.invalid && rentalForm.get("name")?.touched) {
@@ -32,6 +33,7 @@
         type="email"
         aria-required="true"
         aria-describedby="email-help"
+        class="ipt-secondary"
       />
       <span id="email-help" class="sr-only">Campo obrigatório</span>
       @if (
@@ -55,6 +57,7 @@
         [mask]="phoneMask"
         aria-required="true"
         aria-describedby="phone-help"
+        class="ipt-secondary"
       />
       <span id="phone-help" class="sr-only">Campo obrigatório</span>
       @if (

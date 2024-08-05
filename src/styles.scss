@@ -38,6 +38,11 @@ input {
   }
 }
 
+.ipt-secondary {
+  border: 0.0625rem solid $placeholder-color;
+  color: $background-color;
+}
+
 textarea {
   height: 9.375rem;
   width: 100%;
