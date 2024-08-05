@@ -1,6 +1,20 @@
 .main-footer {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 5.625rem;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 }

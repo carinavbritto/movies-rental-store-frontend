@@ -7,4 +7,13 @@
   h1 {
     visibility: hidden;
   }
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
