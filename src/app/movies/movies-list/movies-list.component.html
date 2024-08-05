@@ -19,8 +19,8 @@
   >
     <p>ID da Reserva: {{ reservationId }}</p>
     <p>
-      Sua reserva expira em 3 horas. Para garantir que você possa aproveitar seu
-      filme, confirme a locação o quanto antes.
+      Sua reserva expira em 3 horas. Confirme a locação o quanto antes para
+      assistir seu filme.
     </p>
     <button (click)="closeReservationModal()">Confirmar Locação</button>
   </app-modal>
@@ -40,8 +40,8 @@
     (onClose)="closeSuccessModal()"
   >
     <p>
-      Aproveite seu filme e boa sessão! Ele deve ser devolvido no dia:
-      {{ leaseExpiresAt | date: "dd/MM 'até' HH:mm" }}
+      Aproveite seu filme e boa sessão! Ele deve ser devolvido até o dia:
+      {{ leaseExpiresAt | date: "dd/MM 'às' HH:mm" }}
     </p>
   </app-modal>
 </div>

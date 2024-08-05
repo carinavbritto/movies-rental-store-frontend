@@ -7,18 +7,49 @@
     <label>
       Nome:
       <input formControlName="name" type="text" />
+      @if (rentalForm.get("name")?.invalid && rentalForm.get("name")?.touched) {
+        <div>
+          @if (rentalForm.get("name")?.errors?.["required"]) {
+            <small>Nome é obrigatório.</small>
+          }
+        </div>
+      }
     </label>
     <label>
       Email:
       <input formControlName="email" type="email" />
+      @if (
+        rentalForm.get("email")?.invalid && rentalForm.get("email")?.touched
+      ) {
+        <div>
+          @if (rentalForm.get("email")?.errors?.["required"]) {
+            <small>Email é obrigatório.</small>
+          }
+          @if (rentalForm.get("email")?.errors?.["email"]) {
+            <small>Email inválido.</small>
+          }
+        </div>
+      }
     </label>
     <label>
       Telefone:
-      <input formControlName="phone" type="text" />
+      <input formControlName="phone" type="text" [mask]="phoneMask" />
+      @if (
+        rentalForm.get("phone")?.invalid && rentalForm.get("phone")?.touched
+      ) {
+        <div>
+          @if (rentalForm.get("phone")?.errors?.["required"]) {
+            <small>Telefone é obrigatório.</small>
+          }
+          @if (rentalForm.get("phone")?.errors?.["pattern"]) {
+            <small>Telefone inválido.</small>
+          }
+        </div>
+      }
     </label>
     <p>
-      Lembre-se de que o filme deve ser devolvido em até 3 dias corridos, para
-      evitar multas.
+      Lembre-se de que o filme deve ser devolvido em no máximo 3 dias corridos,
+      para evitar multas.
     </p>
     <button type="submit">Confirmar</button>
   </form>
