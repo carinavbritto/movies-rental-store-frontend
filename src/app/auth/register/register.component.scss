@@ -9,24 +9,4 @@
   padding: 3rem 4.25rem;
   background-color: $terciary-color;
   border-radius: 0.375rem;
-
-  .inputs-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 0.3125rem;
-
-    input {
-      width: 100%;
-    }
-  }
-
-  .buttons-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
-    gap: 0.625rem;
-  }
 }
