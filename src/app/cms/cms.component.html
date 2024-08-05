@@ -1,11 +1,12 @@
-<div class="container">
-  <h2 id="movie-management-heading">Gestão de Filmes</h2>
+<div class="cms-container">
   <form
     [formGroup]="movieForm"
     (ngSubmit)="onSubmit()"
     class="cms-form"
     aria-labelledby="movie-management-heading"
   >
+    <h2 id="movie-management-heading">Gestão de Filmes</h2>
+
     <div class="inputs-area">
       <label for="name">Nome</label>
       <input
@@ -40,21 +41,25 @@
       />
       <span id="rating-help" class="sr-only">Campo obrigatório</span>
     </div>
-    <button type="submit" class="btn-primary">Adicionar</button>
+    <button type="submit" class="btn-primary">Adicionar ao catálogo</button>
   </form>
 
-  <h3>Estoque de Filmes</h3>
-  @for (movie of movies; track movie._id) {
-    <div>
-      <h3>{{ movie.name }}</h3>
-      <p>{{ movie.synopsis }}</p>
-      <p>{{ movie.rating }}</p>
-      <button (click)="editMovie(movie)" class="btn-primary">Editar</button>
-      <button (click)="deleteMovie(movie._id)" class="btn-secondary">
-        Excluir
-      </button>
-    </div>
-  } @empty {
-    <p>Sem filmes disponíveis.</p>
-  }
+  <div class="movies-container">
+    <h3>Catálogo de Filmes</h3>
+    @for (movie of movies; track movie._id) {
+      <div class="movies-card">
+        <h3>{{ movie.name }}</h3>
+        <p>{{ movie.synopsis }}</p>
+        <p>{{ movie.rating }}</p>
+        <div class="buttons-area">
+          <button (click)="editMovie(movie)" class="btn-primary">Editar</button>
+          <button (click)="deleteMovie(movie._id)" class="btn-secondary">
+            Excluir
+          </button>
+        </div>
+      </div>
+    } @empty {
+      <p>Sem filmes disponíveis.</p>
+    }
+  </div>
 </div>
