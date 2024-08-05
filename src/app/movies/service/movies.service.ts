@@ -18,7 +18,7 @@ export interface Movie {
 })
 
 export class MoviesService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = `${environment.apiUrl}/movies`;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

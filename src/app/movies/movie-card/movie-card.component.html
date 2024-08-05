@@ -1,9 +1,13 @@
 <div class="movie-card">
-  <h2>{{ movie.name }}</h2>
-  <h5>{{ movie.rating }}</h5>
+  <div class="card-header">
+    <h2>{{ movie.name }}</h2>
+    <h5>{{ movie.rating }}</h5>
+  </div>
   <p>{{ movie.synopsis }}</p>
   @if (movie.status === "available") {
-    <button (click)="onReserve(movie._id)">Reservar</button>
+    <button (click)="onReserve(movie._id)" class="btn-secondary">
+      Reservar
+    </button>
   } @else if (movie.status === "leased") {
     <button disabled>Alugado</button>
     <p>

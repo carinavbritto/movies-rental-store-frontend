@@ -2,9 +2,10 @@
   [isVisible]="isVisible"
   title="Confirme sua Locação"
   (onClose)="closeModal()"
+  class="modal-container"
 >
-  <form [formGroup]="rentalForm" (ngSubmit)="submitForm()">
-    <label>
+  <form [formGroup]="rentalForm" (ngSubmit)="submitForm()" class="rental-form">
+    <label class="inputs-area">
       Nome:
       <input formControlName="name" type="text" />
       @if (rentalForm.get("name")?.invalid && rentalForm.get("name")?.touched) {
@@ -15,7 +16,7 @@
         </div>
       }
     </label>
-    <label>
+    <label class="inputs-area">
       Email:
       <input formControlName="email" type="email" />
       @if (
@@ -31,7 +32,7 @@
         </div>
       }
     </label>
-    <label>
+    <label class="inputs-area">
       Telefone:
       <input formControlName="phone" type="text" [mask]="phoneMask" />
       @if (

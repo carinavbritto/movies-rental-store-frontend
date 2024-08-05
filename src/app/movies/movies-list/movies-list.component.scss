@@ -5,4 +5,14 @@
   align-items: start;
   padding: 5.125rem 5.625rem;
   gap: 1.25rem;
+
+  .movies-list {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 coluna por padrão */
+    gap: 2.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr); /* 6 colunas no desktop */
+    }
+  }
 }
