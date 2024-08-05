@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -18,6 +19,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'cms',
-    loadComponent: () => import('./cms/cms.component').then(c => c.CmsComponent)
+    loadComponent: () => import('./cms/cms.component').then(c => c.CmsComponent),
+    canActivate: [AuthGuard]
   }
 ];
