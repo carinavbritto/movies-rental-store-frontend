@@ -1,0 +1,28 @@
+<div>
+  <h1>Gestão de Filmes</h1>
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nome</label>
+    <input id="name" formControlName="name" type="text" />
+
+    <label for="synopsis">Sinopse</label>
+    <input id="synopsis" formControlName="synopsis" type="text" />
+
+    <label for="rating">Classificação</label>
+    <input id="rating" formControlName="rating" type="text" />
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <h2>Lista de Filmes</h2>
+  @for (movie of movies; track movie._id) {
+    <div>
+      <h3>{{ movie.name }}</h3>
+      <p>{{ movie.synopsis }}</p>
+      <p>{{ movie.rating }}</p>
+      <button (click)="editMovie(movie)">Editar</button>
+      <button (click)="deleteMovie(movie._id)">Excluir</button>
+    </div>
+  } @empty {
+    <p>Sem filmes disponíveis.</p>
+  }
+</div>

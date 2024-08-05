@@ -15,5 +15,9 @@ export const APP_ROUTES: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./auth/register/register.component').then(c => c.RegisterComponent)
+  },
+  {
+    path: 'cms',
+    loadComponent: () => import('./cms/cms.component').then(c => c.CmsComponent)
   }
 ];
