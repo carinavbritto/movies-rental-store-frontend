@@ -1,6 +1,11 @@
 <div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
-    <h2>Login</h2>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+    class="login-form"
+    aria-labelledby="login-heading"
+  >
+    <h2 id="login-heading">Login</h2>
 
     <div class="inputs-area">
       <label for="username">Usuário</label>
@@ -9,7 +14,10 @@
         formControlName="username"
         type="text"
         placeholder="Digite seu usuário"
+        aria-required="true"
+        aria-describedby="username-help"
       />
+      <span id="username-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="inputs-area">
@@ -19,7 +27,10 @@
         formControlName="password"
         type="password"
         placeholder="Digite sua senha"
+        aria-required="true"
+        aria-describedby="password-help"
       />
+      <span id="password-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="buttons-area">

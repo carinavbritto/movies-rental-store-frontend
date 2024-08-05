@@ -3,8 +3,9 @@
     [formGroup]="registerForm"
     (ngSubmit)="register()"
     class="register-form"
+    aria-labelledby="register-heading"
   >
-    <h2>Cadastro</h2>
+    <h2 id="register-heading">Cadastro</h2>
 
     <div class="inputs-area">
       <label for="username">Usuário</label>
@@ -13,7 +14,10 @@
         formControlName="username"
         type="text"
         placeholder="Digite seu usuário"
+        aria-required="true"
+        aria-describedby="username-help"
       />
+      <span id="username-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="inputs-area">
@@ -23,7 +27,10 @@
         formControlName="password"
         type="password"
         placeholder="Digite sua senha"
+        aria-required="true"
+        aria-describedby="password-help"
       />
+      <span id="password-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="inputs-area">
@@ -33,11 +40,14 @@
         formControlName="confirmPassword"
         type="password"
         placeholder="Repita sua senha"
+        aria-required="true"
+        aria-describedby="confirm-password-help"
       />
+      <span id="confirm-password-help" class="sr-only">Campo obrigatório</span>
     </div>
     @if (registerForm.hasError("passwordMismatch", "confirmPassword")) {
       <div>
-        <p>As senhas não coincidem.</p>
+        <p role="alert">As senhas não coincidem.</p>
       </div>
     }
 

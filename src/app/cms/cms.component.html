@@ -1,19 +1,44 @@
 <div class="container">
-  <h2>Gestão de Filmes</h2>
-  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="cms-form">
+  <h2 id="movie-management-heading">Gestão de Filmes</h2>
+  <form
+    [formGroup]="movieForm"
+    (ngSubmit)="onSubmit()"
+    class="cms-form"
+    aria-labelledby="movie-management-heading"
+  >
     <div class="inputs-area">
       <label for="name">Nome</label>
-      <input id="name" formControlName="name" type="text" />
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        aria-required="true"
+        aria-describedby="name-help"
+      />
+      <span id="name-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="inputs-area">
       <label for="synopsis">Sinopse</label>
-      <textarea id="synopsis" formControlName="synopsis"></textarea>
+      <textarea
+        id="synopsis"
+        formControlName="synopsis"
+        aria-required="true"
+        aria-describedby="synopsis-help"
+      ></textarea>
+      <span id="synopsis-help" class="sr-only">Campo obrigatório</span>
     </div>
 
     <div class="inputs-area">
       <label for="rating">Classificação</label>
-      <input id="rating" formControlName="rating" type="text" />
+      <input
+        id="rating"
+        formControlName="rating"
+        type="text"
+        aria-required="true"
+        aria-describedby="rating-help"
+      />
+      <span id="rating-help" class="sr-only">Campo obrigatório</span>
     </div>
     <button type="submit" class="btn-primary">Adicionar</button>
   </form>

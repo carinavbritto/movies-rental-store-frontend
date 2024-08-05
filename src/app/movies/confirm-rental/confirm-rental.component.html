@@ -3,47 +3,70 @@
   title="Confirme sua Locação"
   (onClose)="closeModal()"
   class="modal-container"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
 >
+  <h2 id="modal-title" class="sr-only">Confirme sua Locação</h2>
   <form [formGroup]="rentalForm" (ngSubmit)="submitForm()" class="rental-form">
     <label class="inputs-area">
       Nome:
-      <input formControlName="name" type="text" />
+      <input
+        formControlName="name"
+        type="text"
+        aria-required="true"
+        aria-describedby="name-help"
+      />
+      <span id="name-help" class="sr-only">Campo obrigatório</span>
       @if (rentalForm.get("name")?.invalid && rentalForm.get("name")?.touched) {
         <div>
           @if (rentalForm.get("name")?.errors?.["required"]) {
-            <small>Nome é obrigatório.</small>
+            <small role="alert">Nome é obrigatório.</small>
           }
         </div>
       }
     </label>
     <label class="inputs-area">
       Email:
-      <input formControlName="email" type="email" />
+      <input
+        formControlName="email"
+        type="email"
+        aria-required="true"
+        aria-describedby="email-help"
+      />
+      <span id="email-help" class="sr-only">Campo obrigatório</span>
       @if (
         rentalForm.get("email")?.invalid && rentalForm.get("email")?.touched
       ) {
         <div>
           @if (rentalForm.get("email")?.errors?.["required"]) {
-            <small>Email é obrigatório.</small>
+            <small role="alert">Email é obrigatório.</small>
           }
           @if (rentalForm.get("email")?.errors?.["email"]) {
-            <small>Email inválido.</small>
+            <small role="alert">Email inválido.</small>
           }
         </div>
       }
     </label>
     <label class="inputs-area">
       Telefone:
-      <input formControlName="phone" type="text" [mask]="phoneMask" />
+      <input
+        formControlName="phone"
+        type="text"
+        [mask]="phoneMask"
+        aria-required="true"
+        aria-describedby="phone-help"
+      />
+      <span id="phone-help" class="sr-only">Campo obrigatório</span>
       @if (
         rentalForm.get("phone")?.invalid && rentalForm.get("phone")?.touched
       ) {
         <div>
           @if (rentalForm.get("phone")?.errors?.["required"]) {
-            <small>Telefone é obrigatório.</small>
+            <small role="alert">Telefone é obrigatório.</small>
           }
           @if (rentalForm.get("phone")?.errors?.["pattern"]) {
-            <small>Telefone inválido.</small>
+            <small role="alert">Telefone inválido.</small>
           }
         </div>
       }
